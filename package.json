@@ -1,0 +1,26 @@
+{
+  "name": "size-challenge",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:esbuild && npm run build:rollup && npm run build:print-sizes",
+    "build:esbuild": "esbuild --bundle src/index.jsx --minify --loader:.js=jsx --jsx=automatic --outdir=dist-esbuild",
+    "build:rollup": "rollup -c rollup.config.js",
+    "build:print-sizes": "node print-size.js"
+  },
+  "dependencies": {
+    "@cloudscape-design/components": "^3.0.1017",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "esbuild": "^0.25.6",
+    "glob": "^11.0.3",
+    "gzip-size": "^7.0.0",
+    "gzip-size-cli": "^5.1.0",
+    "lightningcss": "^1.30.1",
+    "rollup": "^4.44.2",
+    "rollup-plugin-import-css": "^4.0.1"
+  }
+}
